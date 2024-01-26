@@ -40,8 +40,18 @@ window.onload = changeAllColors;
 function copyToClipboard(colorId, event) {
     event.stopPropagation();
     const colorText = document.getElementById(colorId).textContent;
+    const color = `#${colorText}`;
     navigator.clipboard.writeText(`#${colorText}`).then(() => {
-        alert("Color code copied to clipboard!");
+        const notification = document.getElementById("copy-notification");
+        notification.style.display = 'block';
+        notification.style.opacity = '1';
+        notification.style.background = color;
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            setTimeout(() => { 
+                notification.style.display = 'none';
+            }, 300);
+        }, 2000);
     }).catch(err => {
         console.error('Could not copy text: ', err);
     });
