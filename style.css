@@ -40,6 +40,37 @@ main{
     transition: background-color 0.5s ease;
 }
 
+.icon-drag {
+    position: absolute;
+    bottom: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.icon-lock,
+.icon-unlock {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.copy-icon {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    cursor: pointer;
+    z-index: 3;
+}
+
 .palette span {
     font-size: 1rem;
     font-weight: 400;
@@ -49,12 +80,29 @@ main{
     transition: color 0.5s ease;
 }
 
+.color-container:hover .icon-drag {
+    cursor: grab;
+}
+
+.color-container:active .icon-drag,
+.color-container.dragging .icon-drag {
+    cursor: grabbing;
+}
+
+.color-container.loked{
+    opacity: 0.6;
+}
+
 .color-container:hover,
 .color-container:focus {
     transform: scale(1.05);
 }
 
 .color-code {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
     color: white;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     font-size: 1rem;
@@ -81,11 +129,3 @@ footer p {
     }
 }
 
-.copy-icon {
-    cursor: pointer;
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    color: white; 
-    z-index: 10; 
-}
