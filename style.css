@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace;
+}
+
+header, footer{
+    text-align: center;
+    padding: 1rem;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+#instructions {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.color-container {
+    position: relative;
+    cursor: pointer;
+    flex-basis: calc(20% - 1rem);
+    max-width: calc(20% - 1rem);
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transition: background-color 0.5s ease;
+}
+
+.palette span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    padding: 0.5rem;
+    transition: color 0.5s ease;
+}
+
+.color-container:hover,
+.color-container:focus {
+    transform: scale(1.05);
+}
+
+.color-code {
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    font-size: 1rem;
+}
+
+footer p {
+    font-size: medium;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .palette {
+        flex-basis: calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+        height: 40vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .palette {
+        flex-basis: calc(100% - 2rem);
+        max-width: calc(100% - 2rem);
+        height: 60vw;
+    }
+}
+
+.copy-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: white; 
+    z-index: 10; 
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+        <title>Create Your Own Palette</title>
+    </head>
+    <body>
+        <header>
+            <h1>Create your own palette</h1>
+        </header>
+        <main>  
+            <p id="instructions">Press the spacebar to generate new color palettes!</p>   
+            <section class="color-container" id="randcolor1" onClick="changeColors('randcolor1', 'color1')"> 
+                <span class="material-icons copy-icon" onclick="copyToClipboard('color1', event)">content_copy</span>
+                <span id="color1" class="color-code"></span>
+            </section>    
+            <section class="color-container" id="randcolor2" onClick="changeColors('randcolor2', 'color2')"> 
+                <span class="material-icons copy-icon" onclick="copyToClipboard('color2', event)">content_copy</span>
+                <span id="color2" class="color-code"></span>
+            </section>
+            <section class="color-container" id="randcolor3" onClick="changeColors('randcolor3', 'color3')"> 
+                <span class="material-icons copy-icon" onclick="copyToClipboard('color3', event)">content_copy</span>
+                <span id="color3" class="color-code"></span>
+            </section>
+            <section class="color-container" id="randcolor4" onClick="changeColors('randcolor4', 'color4')"> 
+                <span class="material-icons copy-icon" onclick="copyToClipboard('color4', event)">content_copy</span>
+                <span id="color4" class="color-code"></span>
+            </section>
+            <section class="color-container" id="randcolor5" onClick="changeColors('randcolor5', 'color5')"> 
+                <span class="material-icons copy-icon" onclick="copyToClipboard('color5', event)">content_copy</span>
+                <span id="color5" class="color-code"></span>
+            </section>
+        </main>
+        <footer>
+            <p>created by @klnamv</p>
+        </footer>
+    </body>
+</html>
