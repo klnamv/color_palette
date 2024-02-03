@@ -106,10 +106,12 @@ function changeAllColors(){
 
     for (const [letterId, colorContainerId] of Object.entries(letterColors)) {
         const colorId = 'color' + colorContainerId.replace('randcolor', '');
-        changeColors(colorContainerId, colorId); // This will update the background colors and text for the palette
-
-        // Now, apply the color to the letter in the header
+        changeColors(colorContainerId, colorId);
         const color = document.getElementById(colorId).textContent;
         document.getElementById(letterId).style.color = '#' + color;
     }
+}
+
+function checkDevice() {
+    document.getElementById('generateColors').addEventListener('click', changeAllColors);
 }
