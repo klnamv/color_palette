@@ -91,3 +91,25 @@ function dragEnd(event) {
 document.querySelectorAll('.color-container').forEach(container => {
     container.addEventListener('dragend', dragEnd);
 });
+
+function changeAllColors(){
+    const colorIds = ['randcolor1', 'randcolor2', 'randcolor3', 'randcolor4', 'randcolor5'];
+    const letterColors = {
+        p: 'randcolor1',
+        a: 'randcolor2',
+        l: 'randcolor3',
+        e1: 'randcolor4',
+        t1: 'randcolor5',
+        t2: 'randcolor5',
+        e2: 'randcolor4',
+    };
+
+    for (const [letterId, colorContainerId] of Object.entries(letterColors)) {
+        const colorId = 'color' + colorContainerId.replace('randcolor', '');
+        changeColors(colorContainerId, colorId); // This will update the background colors and text for the palette
+
+        // Now, apply the color to the letter in the header
+        const color = document.getElementById(colorId).textContent;
+        document.getElementById(letterId).style.color = '#' + color;
+    }
+}
